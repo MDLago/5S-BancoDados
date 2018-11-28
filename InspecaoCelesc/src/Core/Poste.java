@@ -5,10 +5,55 @@
  */
 package Core;
 
+import SGBD.Delete;
+import SGBD.Insert;
+import SGBD.Select;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author marco
  */
 public class Poste {
     
+    public void inserirPoste(Connection con,String etiqueta, int material, double latitude, double longitude ) throws SQLException{
+        String sql = Insert.SQLInserirPoste();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        
+        pstm.setString(1, etiqueta);
+        pstm.setInt(2, material);
+        pstm.setDouble(3, latitude);
+        pstm.setDouble(4, longitude);
+        
+        pstm.executeUpdate();
+    }
+    
+    public void apagarPoste(Connection con, int id) throws SQLException{
+        String sql = Delete.SQLApagarPosteID();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        
+        pstm.setInt(1, id);
+        
+        pstm.executeUpdate();
+    }
+     public void apagarPoste(Connection con, String etiqueta) throws SQLException{
+        String sql = Delete.SQLApagarPosteEtiqueta();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        
+        pstm.setString(1, etiqueta);
+        
+        pstm.executeUpdate();
+    }
+     
+     public ResultSet listarPoste(Connection con) throws SQLException{
+         String sql = Select.SQLListarPoste();
+         PreparedStatement pstm = con.prepareStatement(sql);
+         
+         ResultSet rs = pstm.executeQuery();
+         
+         return rs;
+     }
 }

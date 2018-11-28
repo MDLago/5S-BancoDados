@@ -12,7 +12,7 @@ package Core;
 public enum Materiais {
     FERRO(1),MADEIRA(2),CONCRETO(3);
     
-    private final int valor;
+    private int valor;
 
     Materiais(int valor) {
         this.valor = valor;

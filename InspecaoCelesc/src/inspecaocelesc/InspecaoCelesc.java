@@ -9,7 +9,7 @@ import Core.*;
 import SGBD.Conexao;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -32,16 +32,16 @@ public class InspecaoCelesc {
     public static void main(String[] args) {
         // TODO code application logic here
         Connection con = new Conexao().getConnection();
-        Poste teste = new Poste();
-        Inspecao teste2 = new Inspecao();
-        String str = "13/12/2015";
         
+        Inspecao teste = new Inspecao();
+        String data = "12/11/2018";
         
         try {
-            teste2.inserirInspecao(con, true, true, true, getData(str), 1);
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            teste.apagarInspecao(con, 10);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
+    
     
 }
