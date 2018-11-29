@@ -14,4 +14,20 @@ public abstract class Select {
         return 
                 "select * from poste";
     }
+    
+    public static String SQLListarInspecao(){
+        return
+                "select" +
+"		i.id," +
+"		i.prumo," +
+"		i.estado_conservacao as conservacao," +
+"		i.condicao_fiacao as fiacao," +
+"		i.data as data_inspecao," +
+"		p.etiqueta as poste" +
+"	from" +
+"		inspecao i" +
+"		inner join poste p on (i.poste_id = p.id)" +
+"	order by" +
+"		poste";
+    }
 }

@@ -18,7 +18,7 @@ public class Conexao {
     private static String usuario = "marco";
     private static String senha = "123456";
     
-    public Connection getConnection(){
+    public static Connection getConnection(){
         try {
             return DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException ex) {

@@ -5,11 +5,11 @@
  */
 package inspecaocelesc;
 
+import Interface.Principal;
 import Core.*;
 import SGBD.Conexao;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -18,13 +18,14 @@ import java.time.format.DateTimeFormatter;
  * @author marco
  */
 public class InspecaoCelesc {
-    static private Date getData(String str){
+    static public Date getData(String str){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dateTime = LocalDate.parse(str, formatter);
         Date a = java.sql.Date.valueOf(dateTime);
         
         return a;
-    }
+    }   
+    
     /**
      * @param args the command line arguments
      */
@@ -33,14 +34,8 @@ public class InspecaoCelesc {
         // TODO code application logic here
         Connection con = new Conexao().getConnection();
         
-        Inspecao teste = new Inspecao();
-        String data = "12/11/2018";
-        
-        try {
-            teste.apagarInspecao(con, 10);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        Principal.main(args);
+
     }
     
     

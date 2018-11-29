@@ -9,7 +9,7 @@ package SGBD;
  *
  * @author marco
  */
-public class Delete {
+public abstract class Delete {
     public static String SQLApagarPosteID(){
         return 
                 "Delete from poste"

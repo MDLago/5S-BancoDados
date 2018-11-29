@@ -7,9 +7,11 @@ package Core;
 
 import SGBD.Delete;
 import SGBD.Insert;
+import SGBD.Select;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -59,5 +61,14 @@ public class Inspecao {
          pstm.setInt(1,id);
          
          pstm.executeUpdate();
+     }
+     
+     public ResultSet listarInspecao(Connection con) throws SQLException{
+         String sql = Select.SQLListarInspecao();
+         PreparedStatement pstm = con.prepareStatement(sql);
+         
+         ResultSet rs = pstm.executeQuery();
+         
+         return rs;
      }
 }
