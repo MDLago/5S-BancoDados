@@ -5,6 +5,7 @@
  */
 package Core;
 
+import Exceptions.EtiquetaInvalida;
 import SGBD.Delete;
 import SGBD.Insert;
 import SGBD.Select;
@@ -19,7 +20,7 @@ import java.sql.SQLException;
  * @author marco
  */
 public class Inspecao {
-    public void InserirInspecao(Connection con, boolean prumo, boolean conservacao, boolean fiacao, Date data,int posteID) throws SQLException{
+    public static void InserirInspecao(Connection con, boolean prumo, boolean conservacao, boolean fiacao, Date data,int posteID) throws SQLException{
         String sql = Insert.SQLInserirInspecaoPosteID();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -32,7 +33,12 @@ public class Inspecao {
         pstm.executeUpdate();
     }
 
-    public void InserirInspecao(Connection con, boolean prumo, boolean conservacao, boolean fiacao, Date data,String posteEtiqueta) throws SQLException{
+    public static void InserirInspecao(Connection con, boolean prumo, boolean conservacao, boolean fiacao, Date data,String posteEtiqueta) throws SQLException, EtiquetaInvalida{
+        
+        if(posteEtiqueta.length() != 5){
+            throw new EtiquetaInvalida();
+        }
+        
         String sql = Insert.SQLInserirInspecaoPosteEtiqueta();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -45,7 +51,7 @@ public class Inspecao {
         pstm.executeUpdate();
     }
     
-     public void apagarPoste(Connection con, int id) throws SQLException{
+     public static void apagarPoste(Connection con, int id) throws SQLException{
         String sql = Delete.SQLApagarPosteID();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -54,7 +60,7 @@ public class Inspecao {
         pstm.executeUpdate();
     }
      
-     public void apagarInspecao(Connection con, int id) throws SQLException{
+     public static void apagarInspecao(Connection con, int id) throws SQLException{
          String sql = Delete.SQLApagarInspecao();
          PreparedStatement pstm = con.prepareStatement(sql);
          
@@ -63,7 +69,7 @@ public class Inspecao {
          pstm.executeUpdate();
      }
      
-     public ResultSet listarInspecao(Connection con) throws SQLException{
+     public static ResultSet listarInspecao(Connection con) throws SQLException{
          String sql = Select.SQLListarInspecao();
          PreparedStatement pstm = con.prepareStatement(sql);
          

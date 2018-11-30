@@ -5,10 +5,8 @@
  */
 package inspecaocelesc;
 
+import Exceptions.DataInvalida;
 import Interface.Principal;
-import Core.*;
-import SGBD.Conexao;
-import java.sql.Connection;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -18,13 +16,18 @@ import java.time.format.DateTimeFormatter;
  * @author marco
  */
 public class InspecaoCelesc {
-    static public Date getData(String str){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dateTime = LocalDate.parse(str, formatter);
-        Date a = java.sql.Date.valueOf(dateTime);
+    static public Date getData(String str) throws DataInvalida{
+        try{
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate dateTime = LocalDate.parse(str, formatter);
+            Date a = java.sql.Date.valueOf(dateTime);
+            return a;
+        }catch (Exception e){
+            throw new DataInvalida();
+        }
         
-        return a;
-    }   
+    }
+    
     
     /**
      * @param args the command line arguments
@@ -32,7 +35,6 @@ public class InspecaoCelesc {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Connection con = new Conexao().getConnection();
         
         Principal.main(args);
 

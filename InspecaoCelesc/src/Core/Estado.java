@@ -9,17 +9,16 @@ package Core;
  *
  * @author marco
  */
-public enum Materiais {
-    FERRO(1),MADEIRA(2),CONCRETO(3);
+public enum Estado {
+    ADEQUADO(true), INADEQUADO(false);
     
-    private int valor;
-
-    Materiais(int valor) {
-        this.valor = valor;
+    private boolean valor;
+    
+    Estado(boolean valor){
+        this.valor = valor;             
     }
     
-    public int getValor(){
+    public boolean getValor(){
         return this.valor;
     }
-    
 }

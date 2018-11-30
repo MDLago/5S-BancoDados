@@ -58,6 +58,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         menuPrincipalBtn3.setText("Inserir Inspeção");
+        menuPrincipalBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalBtn3ActionPerformed(evt);
+            }
+        });
 
         menuPrincipalBtn2.setText("Excluir Poste");
 
@@ -113,8 +118,18 @@ public class Principal extends javax.swing.JFrame {
         );
 
         btnMenu1.setText("Inicio");
+        btnMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenu1ActionPerformed(evt);
+            }
+        });
 
         bntMenu1Op1.setText("Sair");
+        bntMenu1Op1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntMenu1Op1ActionPerformed(evt);
+            }
+        });
         btnMenu1.add(bntMenu1Op1);
 
         jMenuBar1.add(btnMenu1);
@@ -122,6 +137,11 @@ public class Principal extends javax.swing.JFrame {
         btnMenu2.setText("Ajuda");
 
         btnMenu2Op1.setText("Sobre");
+        btnMenu2Op1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenu2Op1ActionPerformed(evt);
+            }
+        });
         btnMenu2.add(btnMenu2Op1);
 
         jMenuBar1.add(btnMenu2);
@@ -135,7 +155,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,10 +168,24 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuPrincipalBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn1ActionPerformed
-        Connection con = SGBD.Conexao.getConnection();
-        
-        JOptionPane.showMessageDialog(null, "OK");
+        new CadastroPoste().setVisible(true);
     }//GEN-LAST:event_menuPrincipalBtn1ActionPerformed
+
+    private void btnMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenu1ActionPerformed
+        
+    }//GEN-LAST:event_btnMenu1ActionPerformed
+
+    private void bntMenu1Op1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntMenu1Op1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_bntMenu1Op1ActionPerformed
+
+    private void btnMenu2Op1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenu2Op1ActionPerformed
+        JOptionPane.showMessageDialog(null, "Trabalho feito por Marco Dionatan Lago", "Sobre", 1);
+    }//GEN-LAST:event_btnMenu2Op1ActionPerformed
+
+    private void menuPrincipalBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn3ActionPerformed
+        new CadastroInspecao().setVisible(true);
+    }//GEN-LAST:event_menuPrincipalBtn3ActionPerformed
 
     /**
      * @param args the command line arguments

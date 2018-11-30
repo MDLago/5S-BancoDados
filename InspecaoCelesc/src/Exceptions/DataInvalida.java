@@ -9,8 +9,8 @@ package Exceptions;
  *
  * @author marco
  */
-public class MaterialNaoEncontrado extends Exception{
-    public MaterialNaoEncontrado(){
-        super("Material informado não foi encontrado");
+public class DataInvalida extends Exception{
+    public DataInvalida(){
+        super("Data incorreta");
     }
 }

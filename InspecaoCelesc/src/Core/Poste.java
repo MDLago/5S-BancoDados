@@ -5,6 +5,7 @@
  */
 package Core;
 
+import Exceptions.EtiquetaInvalida;
 import SGBD.Delete;
 import SGBD.Insert;
 import SGBD.Select;
@@ -19,7 +20,12 @@ import java.sql.SQLException;
  */
 public class Poste {
     
-    public void inserirPoste(Connection con,String etiqueta, int material, double latitude, double longitude ) throws SQLException{
+    public static void inserirPoste(Connection con,String etiqueta, int material, double latitude, double longitude ) throws SQLException, EtiquetaInvalida{
+        
+        if(etiqueta.length() != 5){
+            throw new EtiquetaInvalida();
+        }
+        
         String sql = Insert.SQLInserirPoste();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -31,7 +37,7 @@ public class Poste {
         pstm.executeUpdate();
     }
     
-    public void apagarPoste(Connection con, int id) throws SQLException{
+    public static void apagarPoste(Connection con, int id) throws SQLException{
         String sql = Delete.SQLApagarPosteID();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -39,7 +45,7 @@ public class Poste {
         
         pstm.executeUpdate();
     }
-     public void apagarPoste(Connection con, String etiqueta) throws SQLException{
+     public static void apagarPoste(Connection con, String etiqueta) throws SQLException{
         String sql = Delete.SQLApagarPosteEtiqueta();
         PreparedStatement pstm = con.prepareStatement(sql);
         
@@ -48,7 +54,7 @@ public class Poste {
         pstm.executeUpdate();
     }
      
-     public ResultSet listarPoste(Connection con) throws SQLException{
+     public static ResultSet listarPoste(Connection con) throws SQLException{
          String sql = Select.SQLListarPoste();
          PreparedStatement pstm = con.prepareStatement(sql);
          

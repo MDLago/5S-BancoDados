@@ -9,17 +9,17 @@ package Core;
  *
  * @author marco
  */
-public enum Materiais {
-    FERRO(1),MADEIRA(2),CONCRETO(3);
+public enum ValorLogico {
     
-    private int valor;
-
-    Materiais(int valor) {
-        this.valor = valor;
+    SIM(true), NAO(false);
+    
+    private boolean valor;
+    
+    ValorLogico(boolean valor){
+        this.valor = valor;             
     }
     
-    public int getValor(){
+    public boolean getValor(){
         return this.valor;
     }
-    
 }
