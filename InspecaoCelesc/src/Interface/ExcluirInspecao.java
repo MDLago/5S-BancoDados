@@ -20,6 +20,7 @@ public class ExcluirInspecao extends javax.swing.JFrame {
      */
     public ExcluirInspecao() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,14 +32,15 @@ public class ExcluirInspecao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ExcluirPostePainel1 = new javax.swing.JPanel();
+        excluirInspecaoPainel1 = new javax.swing.JPanel();
         excluirInspecaoLabel1 = new javax.swing.JLabel();
         excluirInspecaoLabel2 = new javax.swing.JLabel();
         excluirInspecaoCampo1 = new javax.swing.JTextField();
         excluirInspecaoBtn1 = new javax.swing.JButton();
         excluirInspecaoBtn3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("excluirInspecao"); // NOI18N
         setResizable(false);
 
         excluirInspecaoLabel1.setText("Excluir Inspeção");
@@ -65,37 +67,37 @@ public class ExcluirInspecao extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout ExcluirPostePainel1Layout = new javax.swing.GroupLayout(ExcluirPostePainel1);
-        ExcluirPostePainel1.setLayout(ExcluirPostePainel1Layout);
-        ExcluirPostePainel1Layout.setHorizontalGroup(
-            ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ExcluirPostePainel1Layout.createSequentialGroup()
-                .addGroup(ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ExcluirPostePainel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout excluirInspecaoPainel1Layout = new javax.swing.GroupLayout(excluirInspecaoPainel1);
+        excluirInspecaoPainel1.setLayout(excluirInspecaoPainel1Layout);
+        excluirInspecaoPainel1Layout.setHorizontalGroup(
+            excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(excluirInspecaoPainel1Layout.createSequentialGroup()
+                .addGroup(excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(excluirInspecaoPainel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(excluirInspecaoBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(excluirInspecaoLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(excluirInspecaoCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(excluirInspecaoBtn3)))
-                    .addGroup(ExcluirPostePainel1Layout.createSequentialGroup()
+                    .addGroup(excluirInspecaoPainel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(excluirInspecaoLabel1)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
-        ExcluirPostePainel1Layout.setVerticalGroup(
-            ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ExcluirPostePainel1Layout.createSequentialGroup()
+        excluirInspecaoPainel1Layout.setVerticalGroup(
+            excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(excluirInspecaoPainel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(excluirInspecaoLabel1)
                 .addGap(30, 30, 30)
-                .addGroup(ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluirInspecaoLabel2)
                     .addComponent(excluirInspecaoCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(ExcluirPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(excluirInspecaoPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(excluirInspecaoBtn1)
                     .addComponent(excluirInspecaoBtn3))
                 .addGap(24, 24, 24))
@@ -107,14 +109,14 @@ public class ExcluirInspecao extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ExcluirPostePainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(excluirInspecaoPainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ExcluirPostePainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(excluirInspecaoPainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -187,11 +189,11 @@ public class ExcluirInspecao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ExcluirPostePainel1;
     private javax.swing.JButton excluirInspecaoBtn1;
     private javax.swing.JButton excluirInspecaoBtn3;
     private javax.swing.JTextField excluirInspecaoCampo1;
     private javax.swing.JLabel excluirInspecaoLabel1;
     private javax.swing.JLabel excluirInspecaoLabel2;
+    private javax.swing.JPanel excluirInspecaoPainel1;
     // End of variables declaration//GEN-END:variables
 }

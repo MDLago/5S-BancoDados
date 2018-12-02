@@ -81,8 +81,18 @@ public class Principal extends javax.swing.JFrame {
         });
 
         menuPrincipalBtn5.setText("Exibir Postes");
+        menuPrincipalBtn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalBtn5ActionPerformed(evt);
+            }
+        });
 
         menuPrincipalBtn6.setText("Exibir Inspeções");
+        menuPrincipalBtn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalBtn6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPrincipalPainel1Layout = new javax.swing.GroupLayout(menuPrincipalPainel1);
         menuPrincipalPainel1.setLayout(menuPrincipalPainel1Layout);
@@ -126,7 +136,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuPrincipalBtn5)
                     .addComponent(menuPrincipalBtn6))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         btnMenu1.setText("Inicio");
@@ -167,13 +177,13 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(menuPrincipalPainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(menuPrincipalPainel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(menuPrincipalPainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -206,6 +216,14 @@ public class Principal extends javax.swing.JFrame {
     private void menuPrincipalBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn4ActionPerformed
         new ExcluirInspecao().setVisible(true);
     }//GEN-LAST:event_menuPrincipalBtn4ActionPerformed
+
+    private void menuPrincipalBtn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn5ActionPerformed
+        new ExibirPostes().setVisible(true);
+    }//GEN-LAST:event_menuPrincipalBtn5ActionPerformed
+
+    private void menuPrincipalBtn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn6ActionPerformed
+        new ExibirInspecoes().setVisible(true);
+    }//GEN-LAST:event_menuPrincipalBtn6ActionPerformed
 
     /**
      * @param args the command line arguments

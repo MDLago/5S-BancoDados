@@ -5,6 +5,7 @@
  */
 package Core;
 
+import static Core.Poste.listarPoste;
 import Exceptions.*;
 import SGBD.*;
 import java.sql.Connection;
@@ -12,6 +13,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.TableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -70,5 +73,24 @@ public class Inspecao {
          ResultSet rs = pstm.executeQuery();
          
          return rs;
+     }
+     
+       public static TableModel getTableModelInspecao(){
+        Connection con = null;
+        try {
+            con = SGBD.Conexao.getConnection();
+        } catch (Exception e) {
+            return null;
+        }
+        
+        ResultSet rs = null;
+        
+        try{
+            rs = listarInspecao(con);
+        }catch (Exception e){
+            return null;
+        }
+        
+        return DbUtils.resultSetToTableModel(rs);
      }
 }

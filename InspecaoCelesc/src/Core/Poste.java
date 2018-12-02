@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.TableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -73,6 +75,25 @@ public class Poste {
          ResultSet rs = pstm.executeQuery();
          
          return rs;
+     }
+     
+     public static TableModel getTableModelPoste(){
+         Connection con = null;
+        try {
+            con = SGBD.Conexao.getConnection();
+        } catch (Exception e) {
+            return null;
+        }
+        
+        ResultSet rs = null;
+        
+        try{
+            rs = listarPoste(con);
+        }catch (Exception e){
+            return null;
+        }
+        
+        return DbUtils.resultSetToTableModel(rs);
      }
      
 }

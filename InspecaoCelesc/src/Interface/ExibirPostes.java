@@ -5,10 +5,7 @@
  */
 package Interface;
 
-import net.proteanit.sql.DbUtils;
 import Core.Poste;
-import java.sql.Connection;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +18,7 @@ public class ExibirPostes extends javax.swing.JFrame {
      */
     public ExibirPostes() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,21 +30,65 @@ public class ExibirPostes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        exibirPosteScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        exibirPosteTable1 = new javax.swing.JTable();
+        exibirPosteBtn1 = new javax.swing.JButton();
+        exibirPosteLabel1 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("exibirPoste"); // NOI18N
+        setResizable(false);
+
+        exibirPosteTable1.setModel(Poste.getTableModelPoste());
+        jScrollPane1.setViewportView(exibirPosteTable1);
+
+        exibirPosteScrollPane1.setViewportView(jScrollPane1);
+
+        exibirPosteBtn1.setText("Cancelar");
+        exibirPosteBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exibirPosteBtn1ActionPerformed(evt);
+            }
+        });
+
+        exibirPosteLabel1.setText("Listagem de Postes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exibirPosteBtn1)
+                .addGap(52, 52, 52))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(exibirPosteScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(exibirPosteLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(exibirPosteLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exibirPosteScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(exibirPosteBtn1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exibirPosteBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exibirPosteBtn1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_exibirPosteBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,5 +126,10 @@ public class ExibirPostes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exibirPosteBtn1;
+    private javax.swing.JLabel exibirPosteLabel1;
+    private javax.swing.JScrollPane exibirPosteScrollPane1;
+    private javax.swing.JTable exibirPosteTable1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

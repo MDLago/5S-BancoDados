@@ -43,7 +43,7 @@ public class ExcluirPoste extends javax.swing.JFrame {
         excluirPosteBtn2 = new javax.swing.JButton();
         excluirPosteBtn3 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("excluirPoste"); // NOI18N
         setResizable(false);
 
