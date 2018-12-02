@@ -5,10 +5,8 @@
  */
 package Core;
 
-import Exceptions.EtiquetaInvalida;
-import SGBD.Delete;
-import SGBD.Insert;
-import SGBD.Select;
+import Exceptions.*;
+import SGBD.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,21 +35,35 @@ public class Poste {
         pstm.executeUpdate();
     }
     
-    public static void apagarPoste(Connection con, int id) throws SQLException{
+    public static void apagarPoste(Connection con, int id) throws SQLException, DadoNaoEncontrado{
         String sql = Delete.SQLApagarPosteID();
         PreparedStatement pstm = con.prepareStatement(sql);
+        int retorno;
         
         pstm.setInt(1, id);
         
-        pstm.executeUpdate();
+        retorno = pstm.executeUpdate();
+        
+        if(retorno == 0){
+            throw new DadoNaoEncontrado();
+        }
     }
-     public static void apagarPoste(Connection con, String etiqueta) throws SQLException{
+     public static void apagarPoste(Connection con, String etiqueta) throws SQLException, EtiquetaInvalida, DadoNaoEncontrado{
+         
+        if(etiqueta.length() != 5){
+            throw new EtiquetaInvalida();
+        }
         String sql = Delete.SQLApagarPosteEtiqueta();
         PreparedStatement pstm = con.prepareStatement(sql);
+        int retorno;
         
         pstm.setString(1, etiqueta);
         
-        pstm.executeUpdate();
+        retorno=pstm.executeUpdate();
+        
+        if(retorno == 0){
+            throw new DadoNaoEncontrado();
+        }
     }
      
      public static ResultSet listarPoste(Connection con) throws SQLException{
@@ -62,4 +74,5 @@ public class Poste {
          
          return rs;
      }
+     
 }

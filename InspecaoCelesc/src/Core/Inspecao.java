@@ -5,10 +5,8 @@
  */
 package Core;
 
-import Exceptions.EtiquetaInvalida;
-import SGBD.Delete;
-import SGBD.Insert;
-import SGBD.Select;
+import Exceptions.*;
+import SGBD.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -50,23 +48,19 @@ public class Inspecao {
         
         pstm.executeUpdate();
     }
-    
-     public static void apagarPoste(Connection con, int id) throws SQLException{
-        String sql = Delete.SQLApagarPosteID();
-        PreparedStatement pstm = con.prepareStatement(sql);
-        
-        pstm.setInt(1, id);
-        
-        pstm.executeUpdate();
-    }
      
-     public static void apagarInspecao(Connection con, int id) throws SQLException{
+     public static void apagarInspecao(Connection con, int id) throws SQLException, DadoNaoEncontrado{
          String sql = Delete.SQLApagarInspecao();
          PreparedStatement pstm = con.prepareStatement(sql);
+         int retorno;
          
          pstm.setInt(1,id);
          
-         pstm.executeUpdate();
+         retorno = pstm.executeUpdate();
+         
+         if(retorno == 0){
+            throw new DadoNaoEncontrado();
+        }
      }
      
      public static ResultSet listarInspecao(Connection con) throws SQLException{

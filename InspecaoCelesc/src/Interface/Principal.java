@@ -5,8 +5,6 @@
  */
 package Interface;
 
-import java.sql.Connection;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +18,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,7 +30,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        menuPrincipalPainel1 = new javax.swing.JPanel();
         labelPainel1 = new javax.swing.JLabel();
         menuPrincipalBtn1 = new javax.swing.JButton();
         menuPrincipalBtn3 = new javax.swing.JButton();
@@ -47,6 +46,9 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inspeção Celesc");
+        setLocation(new java.awt.Point(0, 0));
+        setName("menuPrincipal"); // NOI18N
+        setResizable(false);
 
         labelPainel1.setText("Menu Principal");
 
@@ -65,53 +67,63 @@ public class Principal extends javax.swing.JFrame {
         });
 
         menuPrincipalBtn2.setText("Excluir Poste");
+        menuPrincipalBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalBtn2ActionPerformed(evt);
+            }
+        });
 
         menuPrincipalBtn4.setText("Excluir Inspeção");
+        menuPrincipalBtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPrincipalBtn4ActionPerformed(evt);
+            }
+        });
 
         menuPrincipalBtn5.setText("Exibir Postes");
 
         menuPrincipalBtn6.setText("Exibir Inspeções");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout menuPrincipalPainel1Layout = new javax.swing.GroupLayout(menuPrincipalPainel1);
+        menuPrincipalPainel1.setLayout(menuPrincipalPainel1Layout);
+        menuPrincipalPainel1Layout.setHorizontalGroup(
+            menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPrincipalPainel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(menuPrincipalBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuPrincipalBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuPrincipalBtn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuPrincipalPainel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(menuPrincipalBtn6)
                             .addComponent(menuPrincipalBtn4)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(menuPrincipalPainel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(menuPrincipalBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(15, 15, 15))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(menuPrincipalPainel1Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(labelPainel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        menuPrincipalPainel1Layout.setVerticalGroup(
+            menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPrincipalPainel1Layout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(labelPainel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuPrincipalBtn1)
                     .addComponent(menuPrincipalBtn2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuPrincipalBtn3)
                     .addComponent(menuPrincipalBtn4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuPrincipalPainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menuPrincipalBtn5)
                     .addComponent(menuPrincipalBtn6))
                 .addContainerGap(81, Short.MAX_VALUE))
@@ -154,13 +166,13 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPrincipalPainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(menuPrincipalPainel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -186,6 +198,14 @@ public class Principal extends javax.swing.JFrame {
     private void menuPrincipalBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn3ActionPerformed
         new CadastroInspecao().setVisible(true);
     }//GEN-LAST:event_menuPrincipalBtn3ActionPerformed
+
+    private void menuPrincipalBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn2ActionPerformed
+        new ExcluirPoste().setVisible(true);
+    }//GEN-LAST:event_menuPrincipalBtn2ActionPerformed
+
+    private void menuPrincipalBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPrincipalBtn4ActionPerformed
+        new ExcluirInspecao().setVisible(true);
+    }//GEN-LAST:event_menuPrincipalBtn4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,7 +249,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu btnMenu2;
     private javax.swing.JMenuItem btnMenu2Op1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelPainel1;
     private javax.swing.JButton menuPrincipalBtn1;
     private javax.swing.JButton menuPrincipalBtn2;
@@ -237,5 +256,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton menuPrincipalBtn4;
     private javax.swing.JButton menuPrincipalBtn5;
     private javax.swing.JButton menuPrincipalBtn6;
+    private javax.swing.JPanel menuPrincipalPainel1;
     // End of variables declaration//GEN-END:variables
 }

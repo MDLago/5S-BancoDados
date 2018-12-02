@@ -50,6 +50,7 @@ public class CadastroPoste extends javax.swing.JFrame {
      */
     public CadastroPoste() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -62,7 +63,7 @@ public class CadastroPoste extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        cadastroPoste = new javax.swing.JPanel();
+        cadastroPostePainel1 = new javax.swing.JPanel();
         cadastroPosteLabel1 = new javax.swing.JLabel();
         cadastroPosteLabel2 = new javax.swing.JLabel();
         cadastroPosteCampo1 = new javax.swing.JTextField();
@@ -76,6 +77,8 @@ public class CadastroPoste extends javax.swing.JFrame {
         cadastroPosteBtn2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("cadastroPoste"); // NOI18N
+        setResizable(false);
 
         cadastroPosteLabel1.setText("Cadastro Poste");
 
@@ -126,56 +129,56 @@ public class CadastroPoste extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout cadastroPosteLayout = new javax.swing.GroupLayout(cadastroPoste);
-        cadastroPoste.setLayout(cadastroPosteLayout);
-        cadastroPosteLayout.setHorizontalGroup(
-            cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastroPosteLayout.createSequentialGroup()
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cadastroPosteLayout.createSequentialGroup()
+        javax.swing.GroupLayout cadastroPostePainel1Layout = new javax.swing.GroupLayout(cadastroPostePainel1);
+        cadastroPostePainel1.setLayout(cadastroPostePainel1Layout);
+        cadastroPostePainel1Layout.setHorizontalGroup(
+            cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadastroPostePainel1Layout.createSequentialGroup()
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cadastroPostePainel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cadastroPosteLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                             .addComponent(cadastroPosteLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cadastroPosteLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cadastroPosteLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cadastroPosteLabel1)
                             .addComponent(cadastroPosteCampo1)
                             .addComponent(cadastroPosteComboBox1, 0, 94, Short.MAX_VALUE)
                             .addComponent(cadastroPosteCampo2)
                             .addComponent(cadastroPosteCampo3)))
-                    .addGroup(cadastroPosteLayout.createSequentialGroup()
+                    .addGroup(cadastroPostePainel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(cadastroPosteBtn1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cadastroPosteBtn2)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        cadastroPosteLayout.setVerticalGroup(
-            cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cadastroPosteLayout.createSequentialGroup()
+        cadastroPostePainel1Layout.setVerticalGroup(
+            cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadastroPostePainel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(cadastroPosteLabel1)
                 .addGap(34, 34, 34)
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastroPosteLabel2)
                     .addComponent(cadastroPosteCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastroPosteLabel3)
                     .addComponent(cadastroPosteComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastroPosteLabel4)
                     .addComponent(cadastroPosteCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastroPosteLabel5)
                     .addComponent(cadastroPosteCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(cadastroPosteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(cadastroPostePainel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastroPosteBtn1)
                     .addComponent(cadastroPosteBtn2))
                 .addGap(19, 19, 19))
@@ -187,14 +190,14 @@ public class CadastroPoste extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cadastroPoste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroPostePainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(cadastroPoste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cadastroPostePainel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -288,7 +291,6 @@ public class CadastroPoste extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JPanel cadastroPoste;
     private javax.swing.JButton cadastroPosteBtn1;
     private javax.swing.JButton cadastroPosteBtn2;
     private javax.swing.JTextField cadastroPosteCampo1;
@@ -300,5 +302,6 @@ public class CadastroPoste extends javax.swing.JFrame {
     private javax.swing.JLabel cadastroPosteLabel3;
     private javax.swing.JLabel cadastroPosteLabel4;
     private javax.swing.JLabel cadastroPosteLabel5;
+    private javax.swing.JPanel cadastroPostePainel1;
     // End of variables declaration//GEN-END:variables
 }
