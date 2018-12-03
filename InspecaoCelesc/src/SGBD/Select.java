@@ -46,4 +46,19 @@ public abstract class Select {
 "	order by" +
 "		poste;";
     }
+    
+    public static String SQLVerificarInspecaoJaInseridaMes(){
+        return
+                "select " +
+"			count(p.etiqueta) as qtd" +
+"		from" +
+"			inspecao i" +
+"			inner join poste p on (i.poste_id = p.id)" +
+"		where " +
+"				extract(month from i.data) = ? " +
+"			and " +
+"				extract(year from i.data) = ?" +
+"			and" +
+"				p.etiqueta = ?";
+    }
 }

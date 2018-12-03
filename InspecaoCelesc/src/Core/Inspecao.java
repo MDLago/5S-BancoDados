@@ -5,7 +5,6 @@
  */
 package Core;
 
-import static Core.Poste.listarPoste;
 import Exceptions.*;
 import SGBD.*;
 import java.sql.Connection;
@@ -52,7 +51,7 @@ public class Inspecao {
         pstm.executeUpdate();
     }
      
-     public static void apagarInspecao(Connection con, int id) throws SQLException, DadoNaoEncontrado{
+    public static void apagarInspecao(Connection con, int id) throws SQLException, DadoNaoEncontrado{
          String sql = Delete.SQLApagarInspecao();
          PreparedStatement pstm = con.prepareStatement(sql);
          int retorno;
@@ -66,7 +65,7 @@ public class Inspecao {
         }
      }
      
-     public static ResultSet listarInspecao(Connection con) throws SQLException{
+    public static ResultSet listarInspecao(Connection con) throws SQLException{
          String sql = Select.SQLListarInspecao();
          PreparedStatement pstm = con.prepareStatement(sql);
          
@@ -74,8 +73,27 @@ public class Inspecao {
          
          return rs;
      }
+    
+    public static int verificarInspecaoMes(Connection con, Date data, String etiqueta) throws SQLException{
+        String sql = Select.SQLVerificarInspecaoJaInseridaMes();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        
+        int mes = data.getMonth()+1;
+        int ano = data.getYear()+1900;
+        int sum=0;
+        
+        pstm.setInt(1, mes);
+        pstm.setInt(2, ano);
+        pstm.setString(3, etiqueta);
+        
+        ResultSet rs = pstm.executeQuery();
+        while(rs.next()){
+            sum += rs.getInt(1);
+        }
+        return sum;
+    }
      
-       public static TableModel getTableModelInspecao(){
+    public static TableModel getTableModelInspecao(){
         Connection con = null;
         try {
             con = SGBD.Conexao.getConnection();

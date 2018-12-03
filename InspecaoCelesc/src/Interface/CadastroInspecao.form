@@ -213,6 +213,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cadastroInspecaoCampoTexto1MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroInspecaoCampoTexto1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cadastroInspecaoCampoTexto2">

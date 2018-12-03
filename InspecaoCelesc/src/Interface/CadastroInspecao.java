@@ -89,6 +89,11 @@ public class CadastroInspecao extends javax.swing.JFrame {
                 cadastroInspecaoCampoTexto1MouseClicked(evt);
             }
         });
+        cadastroInspecaoCampoTexto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroInspecaoCampoTexto1ActionPerformed(evt);
+            }
+        });
 
         cadastroInspecaoCampoTexto2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,18 +269,33 @@ public class CadastroInspecao extends javax.swing.JFrame {
         
         etiqueta=this.cadastroInspecaoCampoTexto2.getText();
         
+        int mesJaInserido = 1;
         try{
-            Inspecao.InserirInspecao(con, prumo, conservacao, fiacao, dataSQL, etiqueta);
+            mesJaInserido = Inspecao.verificarInspecaoMes(con, dataSQL, etiqueta);
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", 0);
             return;
         }
         
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso", "Informação", 1);
+        if (mesJaInserido == 0){
+            try{
+                Inspecao.InserirInspecao(con, prumo, conservacao, fiacao, dataSQL, etiqueta);
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", 0);
+                return;
+            }
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso", "Informação", 1);
+        }else{
+            JOptionPane.showMessageDialog(null, "Este poste já possui uma inspeção inserida nesse mês", "Informação", 1);
+        }
         
         this.cadastroInspecaoCampoTexto1.setText("DD/MM/YYYY");
         this.cadastroInspecaoCampoTexto2.setText("");
     }//GEN-LAST:event_cadastroInspecaoBtn1ActionPerformed
+
+    private void cadastroInspecaoCampoTexto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroInspecaoCampoTexto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cadastroInspecaoCampoTexto1ActionPerformed
 
     /**
      * @param args the command line arguments
