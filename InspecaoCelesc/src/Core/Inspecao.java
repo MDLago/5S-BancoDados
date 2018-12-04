@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -111,4 +112,24 @@ public class Inspecao {
         
         return DbUtils.resultSetToTableModel(rs);
      }
+    
+    public static Vector<ResultSet> getPostesSemInspecao(Connection con,int mesInicial,int anoInicial,int mesFinal, int anoFinal) throws SQLException{
+        String sql = Select.SQLVerificarInspecaoNaoRealizadas();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        
+        Vector<ResultSet> rs = new Vector<>();
+        rs.setSize(0);
+        for (int ano = anoInicial; ano <= anoFinal; ano++) {
+            for(int mes = mesInicial; mes <12;mes++){
+                if(ano == anoFinal && mes > mesFinal){
+                    return rs;
+                }else{
+                    pstm.setInt(1, mes);
+                    pstm.setInt(2, ano);
+                    rs.add(pstm.executeQuery());
+                }
+            }
+        }
+        return rs;   
+    }
 }

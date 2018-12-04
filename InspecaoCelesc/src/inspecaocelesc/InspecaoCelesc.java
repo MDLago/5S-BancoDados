@@ -5,11 +5,15 @@
  */
 package inspecaocelesc;
 
+import Core.Inspecao;
 import Exceptions.DataInvalida;
 import Interface.Principal;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Vector;
 
 /**
  *
@@ -36,7 +40,31 @@ public class InspecaoCelesc {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Principal.main(args);
+        Connection con = null;
+        try {
+            con = SGBD.Conexao.getConnection();
+        } catch (Exception e) {
+            
+        }
+        
+        Vector<ResultSet> rs=null;
+        
+        try{
+            rs = Inspecao.getPostesSemInspecao(con, 6, 2018, 12, 2018);
+        }catch (Exception e){
+            
+        }
+         
+        for (ResultSet r : rs) {
+            try{
+                while(r.next()){
+                    System.out.println(r.getString(1));
+                }
+            }catch(Exception e){
+                
+            }
+        }
+        //Principal.main(args);
 
     }
     

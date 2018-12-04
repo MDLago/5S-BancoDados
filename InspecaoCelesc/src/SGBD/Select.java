@@ -61,4 +61,9 @@ public abstract class Select {
 "			and" +
 "				p.etiqueta = ?";
     }
+    
+    public static String SQLVerificarInspecaoNaoRealizadas(){
+        return
+                "select resultado from postesNaoVistoriados(?,?)";
+    }
 }
